@@ -1,0 +1,65 @@
+[
+{
+    "EMP_NUM": 101,
+    "EMP_LNAME": "News",
+    "EMP_FNAME": "John",
+    "EMP_INITIAL": "G",
+    "EMP_HIREDATE": "11/08/1998"
+},
+{
+    "EMP_NUM": 102,
+    "EMP_LNAME": "Senior",
+    "EMP_FNAME": "David",
+    "EMP_INITIAL": "H",
+    "EMP_HIREDATE": "07/12/1987"
+},
+{
+    "EMP_NUM": 103,
+    "EMP_LNAME": "Arbough",
+    "EMP_FNAME": "June",
+    "EMP_INITIAL": "E",
+    "EMP_HIREDATE": "12/01/1994"
+},
+{
+    "EMP_NUM": 104,
+    "EMP_LNAME": "Ramoras",
+    "EMP_FNAME": "Anne",
+    "EMP_INITIAL": "K",
+    "EMP_HIREDATE": "11/15/1985"
+},
+{
+    "EMP_NUM": 105,
+    "EMP_LNAME": "Johnson",
+    "EMP_FNAME": "Alice",
+    "EMP_INITIAL": "K",
+    "EMP_HIREDATE": "02/01/1991"
+},
+{
+    "EMP_NUM": 106,
+    "EMP_LNAME": "Smithfield",
+    "EMP_FNAME": "William",
+    "EMP_INITIAL": "",
+    "EMP_HIREDATE": "06/22/2003"
+},
+{
+    "EMP_NUM": 112,
+    "EMP_LNAME": "Smithson",
+    "EMP_FNAME": "Darlene",
+    "EMP_INITIAL": "M",
+    "EMP_HIREDATE": "10/23/1992"
+},
+{
+    "EMP_NUM": 114,
+    "EMP_LNAME": "Jones",
+    "EMP_FNAME": "Annelise",
+    "EMP_INITIAL": "",
+    "EMP_HIREDATE": "08/20/1991"
+},
+{
+    "EMP_NUM": 118,
+    "EMP_LNAME": "Frommer",
+    "EMP_FNAME": "James",
+    "EMP_INITIAL": "J",
+    "EMP_HIREDATE": "01/04/2004"
+}
+]

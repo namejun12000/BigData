@@ -1,0 +1,10 @@
+PROJ_NUM,EMP_NUM,JOB_CLASS,CHG_HOUR,HOURS
+15,103,Electrical Engineer,$84.50,23.8
+15,101,Database Designer,$105.00,19.4
+15,105,Database Designer,$105.00,35.7
+15,106,Programmer,$35.75,12.6
+15,102,Systems Analyst,$96.75,23.8
+18,114,Applications Designer,$48.10,24.6
+18,118,General Support,$18.36,45.3
+18,104,Systems Analyst,$96.75,32.4
+18,112,DSS Analyst,$45.95,44.0

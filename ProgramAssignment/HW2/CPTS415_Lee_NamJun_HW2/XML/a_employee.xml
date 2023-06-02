@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees SYSTEM "b_employee.dtd">
+<employees>
+    <!--employee-->
+    <employee emp_num="101">
+        <name>
+            <emp_lname>News</emp_lname>
+            <emp_fname>John</emp_fname>
+        </name>
+        <emp_initial>G</emp_initial>
+        <emp_hiredate>1998-11-08</emp_hiredate>
+    </employee>
+    
+    <employee emp_num="102">
+        <name>
+            <emp_lname>Senior</emp_lname>
+            <emp_fname>David</emp_fname>
+        </name>
+        <emp_initial>H</emp_initial>
+        <emp_hiredate>1987-07-12</emp_hiredate>
+    </employee>
+    
+    <employee emp_num="103">
+        <name>
+            <emp_lname>Arbough</emp_lname>
+            <emp_fname>June</emp_fname>
+        </name>
+        <emp_initial>E</emp_initial>
+        <emp_hiredate>1994-12-01</emp_hiredate>
+    </employee>
+    
+    <employee emp_num="104">
+        <name>
+            <emp_lname>Ramoras</emp_lname>
+            <emp_fname>Anne</emp_fname>
+        </name>
+        <emp_initial>K</emp_initial>
+        <emp_hiredate>1985-11-15</emp_hiredate>
+    </employee>
+    
+    <employee emp_num="105">
+        <name>
+            <emp_lname>Johnson</emp_lname>
+            <emp_fname>Alice</emp_fname>
+        </name>
+        <emp_initial>K</emp_initial>
+        <emp_hiredate>1991-02-01</emp_hiredate>
+    </employee>
+    
+    <employee emp_num="106">
+        <name>
+            <emp_lname>Smithfield</emp_lname>
+            <emp_fname>William</emp_fname>
+        </name>
+        <emp_initial></emp_initial>
+        <emp_hiredate>2003-06-22</emp_hiredate>
+    </employee>
+    
+    <employee emp_num="112">
+        <name>
+            <emp_lname>Smithson</emp_lname>
+            <emp_fname>Darlene</emp_fname>
+        </name>
+        <emp_initial>M</emp_initial>
+        <emp_hiredate>1992-10-23</emp_hiredate>
+    </employee>
+    
+    <employee emp_num="114">
+        <name>
+            <emp_lname>Jones</emp_lname>
+            <emp_fname>Annelise</emp_fname>
+        </name>
+        <emp_initial></emp_initial>
+        <emp_hiredate>1991-08-20</emp_hiredate>
+    </employee>
+    
+    <employee emp_num="118">
+        <name>
+            <emp_lname>Frommer</emp_lname>
+            <emp_fname>James</emp_fname>
+        </name>
+        <emp_initial>J</emp_initial>
+        <emp_hiredate>2004-01-04</emp_hiredate>
+    </employee>
+</employees>

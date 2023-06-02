@@ -1,0 +1,30 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://wsu.edu/cpts415/schemas/a_data_model.json",
+    "type": "object",
+    "properties":
+    {
+        "PROJ_NUM": {"type": "string"},
+        "PROJ_NAME": {"type": "string"},
+        "EMPLOYEE":
+        {
+            "type": "array",
+            "items":
+            {
+                "type": "object",
+                "properties":
+                {
+                    "EMP_NUM": {"type": "string"},
+                    "EMP_LNAME": {"type": "string"},
+                    "EMP_FNAME": {"type": "string"},
+                    "EMP_INITIAL": {"type": ["string", "null"]},
+                    "EMP_HIREDATE": {"type": "string", "format": "date"}
+                }
+            }
+        },
+        "JOB_CLASS": {"type": "string"},
+        "CHG_HOUR": {"type": "number"},
+        "HOURS": {"type": "number"}
+    },
+    "required": ["PROJ_NUM", "EMP_NUM"]
+}

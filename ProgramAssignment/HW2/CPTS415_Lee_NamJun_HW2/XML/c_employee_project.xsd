@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://codingsam.com"
+    xmlns="http://codingsam.com"
+    elementFormDefault="qualified">
+  <xs:element name="employeeProjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="employeeProject">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="proj_num" type="xs:string" />
+              <xs:element name="emp_num" type="xs:string" />
+              <xs:element name="job_class" type="xs:string" />
+              <xs:element name="chg_hour" type="xs:decimal" />
+              <xs:element name="hours" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+
+    <xs:keyref name="proj_num_ref" refer="proj_num_key">
+      <xs:selector xpath=".//employeeProject" />
+      <xs:field xpath="proj_num" />
+    </xs:keyref>
+
+    <xs:keyref name="emp_num_ref" refer="emp_num_key">
+      <xs:selector xpath=".//employeeProject" />
+      <xs:field xpath="emp_num" />
+    </xs:keyref>
+
+  </xs:element>
+</xs:schema>

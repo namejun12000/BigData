@@ -1,0 +1,128 @@
+
+# Problem 1
+# input: X Country
+# output: AirportID, Name, City, Country
+# goal: find all airport in X Country
+
+MATCH (p:Airport) 
+WHERE p.Country = "Iceland"
+RETURN p.AirportID, p.Name, p.City, p.Country
+
+MATCH (p:Airport) 
+WHERE p.Country = "Canada"
+RETURN p.Latitude as latitude, p.Longitude as longitude
+
+# Problem 2
+# input: Number of X Stops
+# output: AirlineID, Name, Stops
+# goal: find a list of airlines having X stops
+
+MATCH (o:Route)-[r:FLOWN_BY]->(l:Airline)
+WHERE o.AirlineID = l.AirlineID AND
+	o.Stops = 1
+RETURN DISTINCT l.AirlineID, l.Name, o.Stops
+ORDER BY l.AirlineID
+
+MATCH (p:Airport)-[r:BEGIN_ROUTE]->(o:Route)
+MATCH (o1:Route)-[r:END_ROUTE]->(p1:Airport)
+WHERE o.AirlineID = o1.AirlineID AND o.Stops= "1"
+RETURN p.Latitude as latitude, p.Longitude as longitude
+
+# Problem 3 
+# input: X Codeshare
+# output: AirlineID, Name, Codeshare
+# goal: find a list of airlines operating with codeshare X
+MATCH (o:Route)-[r:FLOWN_BY]->(l:Airline)
+WHERE o.AirlineID = l.AirlineID AND o.Codeshare = "Y"
+RETURN DISTINCT l.AirlineID, l.Name, o.Codeshare
+
+# Problem 4
+# input: X Activate
+# output: AirlineID, Name, Callsign
+# goal: find a list of X activated airline
+MATCH (l:Airline)
+WHERE l.Active = "Y"
+RETURN DISTINCT l.AirlineID, l.Name, l.Active
+
+# Problem 5
+# input: Airport(Country)
+# output: Airport(Country), COUNT(Airport(AirportName)) -- Highest 10
+# goal: find a list of the highest num of Airport (top 10)
+MATCH (p:Airport)
+RETURN p.Country, COUNT(*) as Count
+ORDER BY Count DESC
+LIMIT 10
+
+# Problem 6
+MATCH (p:Airport)-[:BEGIN_ROUTE]->(o:Route)
+OPTIONAL MATCH (o)-[:FLOWN_BY]->(l:Airline)
+WHERE p.AirportID = o.SourceAirportID AND
+l.AirlineID = o.AirlineID 
+RETURN p.City, COUNT(o.AirlineID) as outgoing
+ORDER BY outgoing DESC
+LIMIT 10
+
+
+MATCH (p:Airport)<-[:END_ROUTE]-(o:Route)
+OPTIONAL MATCH (o)-[:FLOWN_BY]->(l:Airline)
+WHERE p.AirportID = o.DestinationAirportID AND
+l.AirlineID = o.AirlineID 
+RETURN p.City, COUNT(o.AirlineID) as incoming
+ORDER BY incoming DESC
+LIMIT 10
+
+# input: Number of City X
+# output: City, incoming, outgoing, total
+# goal: provide the top X cities with the most incoming and outgoing airlines.
+MATCH ()-[incoming]->(n)-[outgoing]->() 
+WITH n, incoming, outgoing
+WHERE n.City IS NOT NULL
+RETURN n.City, COUNT(DISTINCT incoming) AS Incoming, COUNT(DISTINCT outgoing) as Outgoing, COUNT(DISTINCT incoming) + COUNT(DISTINCT outgoing) as Total
+ORDER BY Total desc
+LIMIT 10
+
+# Problem 7
+# input: Two city (x,y)
+# output: PATH, City x, City x name, City y, City y name
+# goal: provide a list of routes connecting cities x and y
+MATCH PATH=(p:Airport)-[:BEGIN_ROUTE]->(o:Route)-[:END_ROUTE]->(p1:Airport)
+WHERE p.City = "Orlando" AND p1.City = "Houston"
+RETURN PATH
+
+# Problem 8
+# input: Two city (x,y), num of stops z
+# output: PATH, City x, City x name, City y, City y name, Stops
+# goal: provide a list of routes connecting cities x and y directly
+MATCH PATH=(p:Airport)-[:BEGIN_ROUTE]->(o:Route)-[:END_ROUTE]->(p1:Airport)
+WHERE p.City = "Seattle" AND p1.City = "New York" AND o.Stops = 0
+RETURN PATH, p.City, p.Name, p1.City, p1.Name, o.Stops
+
+MATCH PATH=allShortestPaths((p:Airport{City:'Seattle'})-[*..2]->(p1:Airport{City:'New York'}))
+RETURN PATH, p.City, p.Name, p1.City, p1.Name
+
+# Problem 9
+# input: city x, stops y
+# output: PATH, City x, City x name, destination City, destination City name, stops
+# goal: provide a list of cities that can be reached from within y stops
+MATCH PATH=(p:Airport)-[:BEGIN_ROUTE]->(o:Route)-[:END_ROUTE]->(p1:Airport)
+WHERE p.City = "Seattle" AND o.Stops = 0
+RETURN PATH, p.City, p.Name, p1.City, p1.Name, o.Stops
+
+# problem 10
+# input: city x
+# output: PATH, travelDistance, city x, city x Airport Name, city y, city y Airport Name stops, AirlineID
+# goal: Provide the path distance from city x to reachable city y and list it in the order of the best paths
+
+MATCH PATH=(p:Airport)-[:BEGIN_ROUTE]->(o:Route)-[:END_ROUTE]->(p1:Airport)
+WITH *, point({ longitude: p.Longitude, latitude: p.Latitude }) AS source, point({ longitude: p1.Longitude, latitude: p1.Latitude }) AS destination
+WHERE o.AirlineID IS NOT NULL AND p.City = "New York"
+RETURN PATH, round(distance(source, destination))/1000 AS travelDistance, p.City, p.Name, p1.City, p1.Name, o.Stops, o.AirlineID
+ORDER BY travelDistance ASC
+
+MATCH (p1:Airport {City: 'New York' }),(p2:Airport {City: 'Washington' }), path = allShortestPaths((p1)-[*..15]-(p2))
+RETURN path
+
+MATCH PATH=allShortestPaths((p:Airport{City:'Seattle'})-[*]->(p1:Airport{City:'New York'}))
+RETURN PATH, p.City, p.Name, p1.City, p1.Name
+
+

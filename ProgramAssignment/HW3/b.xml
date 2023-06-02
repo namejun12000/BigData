@@ -1,0 +1,54 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:uni="http://www.mydomain.org/uni-ns">
+    <rdf:Description rdf:about="Human1">
+        <uni:name>Mary</uni:name>
+        <uni:gender>Woman</uni:gender>
+        <uni:BirthYear></uni:BirthYear>
+        <uni:Likes rdf:resource="Human2"/>
+        <uni:isMotherOf rdf:resource="Human3"/>
+        <uni:isParentOf rdf:resource="Human3"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="Human2">
+        <uni:name>John</uni:name>
+        <uni:gender>Man</uni:gender>
+        <uni:BirthYear>1950</uni:BirthYear>
+        <uni:Likes rdf:resource="Human1"/>
+        <uni:isMarried rdf:resource="Human1"/>
+        <uni:isFatherOf>
+            <rdf:Bag>
+                <rdf:_1 rdf:resource="Human3"/>
+                <rdf:_2 rdf:resource="Human4"/>
+            </rdf:Bag>
+        </uni:isFatherOf>
+        <uni:isParentOf>
+            <rdf:Bag>
+                <rdf:_1 rdf:resource="Human3"/>
+                <rdf:_2 rdf:resource="Human4"/>
+            </rdf:Bag>
+        </uni:isParentOf>
+    </rdf:Description>
+    <rdf:Description rdf:about="Human3">
+        <uni:name>Frank</uni:name>
+        <uni:gender>Man</uni:gender>
+        <uni:BirthYear>1980</uni:BirthYear>
+        <uni:Likes rdf:resource="Human5"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="Human4">
+        <uni:name>Susan</uni:name>
+        <uni:gender>Woman</uni:gender>
+        <uni:BirthYear>1978</uni:BirthYear>
+    </rdf:Description>
+    <rdf:Description rdf:about="Human5">
+        <uni:name>Sophie</uni:name>
+        <uni:gender>Woman</uni:gender>
+        <uni:BirthYear></uni:BirthYear>
+    </rdf:Description>
+    <rdf:Description rdf:about="Human6">
+        <uni:name>Sandra</uni:name>
+        <uni:gender>Woman</uni:gender>
+        <uni:BirthYear></uni:BirthYear>
+        <uni:Likes rdf:resource="Human3"/>
+    </rdf:Description>
+</rdf:RDF>

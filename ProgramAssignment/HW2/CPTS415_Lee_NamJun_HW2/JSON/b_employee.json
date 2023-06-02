@@ -1,0 +1,15 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://wsu.edu/cpts415/schemas/a_employee.json",
+    "type": "object",
+    "properties":
+    {
+        "EMP_NUM": {"type": "string"},
+        "EMP_LNAME": {"type": "string"},
+        "EMP_FNAME": {"type": "string"},
+        "EMP_INITIAL": {"type": ["string", "null"]},
+        "EMP_HIREDATE": {"type": "string", "format": "date"}
+    },
+    "required": ["EMP_NUM"]
+}
+

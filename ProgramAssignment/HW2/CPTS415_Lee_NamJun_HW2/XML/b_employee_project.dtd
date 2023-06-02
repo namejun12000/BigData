@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employeeProjects[
+    <!ELEMENT employeeProjects(employeeProject*)>
+    <!ELEMENT employeeProject(proj_num, emp_num, job_class, chg_hour, hours)>
+    <!ELEMENT proj_num (#PCDATA)>
+    <!ELEMENT emp_num (#PCDATA)>
+    <!ELEMENT job_class (#PCDATA)>
+    <!ELEMENT chg_hour (#PCDATA)>
+    <!ELEMENT hours (#PCDATA)>
+    <!ATTLIST employeeProject proj_num IDREF #required>
+    <!ATTLIST employeeProject emp_num IDREF #required>
+]>

@@ -1,0 +1,57 @@
+# create node
+LOAD CSV WITH HEADERS FROM 'file:///airports.csv' AS row
+CREATE (p:Airports)
+set p = row
+
+LOAD CSV WITH HEADERS FROM 'file:///airlines.csv' AS row
+CREATE (l:Airlines)
+set l = row
+
+LOAD CSV WITH HEADERS FROM 'file:///routes.csv' AS row
+CREATE (o:Routes)
+set o = row
+
+# create relation
+MATCH(p:Airports), (o:Routes), (l:Airlines), (p1:Airports)
+WHERE p.AirportID = o.SourceAirportID AND o.AirlineID = l.AirlineID AND o.DestinationAirportID = p1.AirportID
+CREATE (p)-[:BEGIN_ROUTE]->(o), (o)-[:FLOWN_BY]->(l), (o)-[:End_ROUTE]->(p1)
+RETURN p,o,l,p1
+
+# create index (performance improvements)
+CREATE INDEX ap_id FOR (p:Airports) ON (p.AirportID)
+CREATE INDEX al_id FOR (l:Airlines) ON (l.Airlines)
+CREATE INDEX sour_dest_al FOR (o:Routes) ON (o.SourceAirportID, o.DestinationAirportID, o.AirlineID)
+
+# create constraint 
+CREATE CONSTRAINT const_ap IF NOT EXISTS FOR (p:Airports) REQUIRE p.AirportID IS UNIQUE
+CREATE CONSTRAINT const_al IF NOT EXISTS FOR (l:Airlines) REQUIRE l.AirlineID IS UNIQUE
+
+# check constraint list
+CALL db.constraints
+
+# constraint delete
+DROP CONSTRAINT "const name"
+
+# check index list
+Call db.indexes
+
+
+############################
+
+# MATCH (p:Airports)
+# WITH p
+# MATCH (o:Routes)
+# WHERE p.AirportID = o.SourceAirportID
+# CREATE (p)-[:BEGIN_ROUTE]->(o)
+
+# MATCH (o:Routes)
+# WITH o
+# MATCH (l:Airlines)
+# WHERE o.AirlineID = l.AirlineID
+# CREATE (o)-[:FLOWN_BY]->(l)
+
+# MATCH (o:Routes)
+# WITH o
+# MATCH (p:Airports)
+# WHERE o.DestinationAirportID = p.AirportID
+# CREATE (o)-[:END_ROUTE]->(p)

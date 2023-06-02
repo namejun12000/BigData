@@ -1,0 +1,99 @@
+<rdfs:Class rdf:ID="Human">
+    <rdfs:comment>
+        The class of Human.
+        Superclass of Man, Woman, NonBinary, Year classes
+    </rdfs:comment>
+</rdfs:Class>
+<rdfs:Class rdf:ID="AnotherHuman">
+    <rdfs:comment>
+        The class of AnotherHuman
+        This class represents other human
+    </rdfs:comment>
+</rdfs:Class>
+<rdfs:Class rdf:ID="Male">
+    <rdfs:comment>
+        The class of Man
+        Subclass of Human
+    </rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Human"/>
+</rdfs:Class>
+<rdfs:Class rdf:ID="Female">
+    <rdfs:comment>
+        The class of Female
+        Subclass of Human
+    </rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Human"/>
+</rdfs:Class>
+<rdfs:Class rdf:ID="NonBinary">
+    <rdfs:comment>
+        The class of NonBinary
+        Subclass of Human
+    </rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Human"/>
+</rdfs:Class>
+<rdfs:Class rdf:ID="Year">
+    <rdfs:comment>
+        The class of Year
+        Birth Year for Human
+        Subclass of Human
+    </rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Human"/>
+</rdfs:Class>
+<rdf:Property rdf:ID="canLike">
+    <rdfs:comment>
+        Inherits its domain ("Human") and range ("AnotherHuman")
+        from its superproperty "isMarried"
+    </rdfs:comment>
+    <rdfs:domain rdfs:resource="#Human" />
+    <rdfs:range rdfs:resource="#AnotherHuman" />
+    <rdfs:subPropertyOf rdfs:resource="#isMarried" />
+</rdf:Property>
+<rdf:Property rdf:ID="canBe">
+    <rdfs:domain rdfs:resource="#Human" />
+    <rdfs:range rdfs:resource="#Man" />
+    <rdfs:range rdfs:resource="#Woman" />
+    <rdfs:range rdfs:resource="#NonBinary" />
+</rdf:Property>
+<rdf:Property rdf:ID="isMarried">
+    <rdfs:domain rdfs:resource="#Human" />
+    <rdfs:range rdfs:resource="#AnotherHuman" />
+</rdf:Property>
+<rdf:Property rdf:ID="isMotherOf">
+    <rdfs:comment>
+        Inherits its domain ("Woman") and range ("AnotherHuman")
+        Inherits its domain ("NonBinary") and range ("AnotherHuman")
+        from its superproperty "isParent"
+    </rdfs:comment>
+    <rdfs:domain rdfs:resource="#Woman" />
+    <rdfs:domain rdfs:resource="#NonBinary" />
+    <rdfs:range rdfs:resource="#AnotherHuman" />
+    <rdfs:subPropertyOf rdfs:resource="#isParentOf" />
+</rdf:Property>
+<rdf:Property rdf:ID="isFatherOf">
+    <rdfs:comment>
+        Inherits its domain ("Man") and range ("AnotherHuman")
+        Inherits its domain ("NonBinary") and range ("AnotherHuman")
+        from its superproperty "isParent"
+    </rdfs:comment>
+    <rdfs:domain rdfs:resource="#Man" />
+    <rdfs:domain rdfs:resource="#NonBinary" />
+    <rdfs:range rdfs:resource="#AnotherHuman" />
+    <rdfs:subPropertyOf rdfs:resource="#isParentOf" />
+</rdf:Property>
+<rdf:Property rdf:ID="isParentOf">
+    <rdfs:domain rdfs:resource="#Human" />
+    <rdfs:range rdfs:resource="#AnotherHuman" />
+</rdf:Property>
+<rdf:Property rdf:ID="BirthYear">
+    <rdfs:romain rdfs:resource="#Human" />
+    <rdfs:range rdfs:resource="#Year" />
+</rdf:Property>
+
+i.    A human can like another human.
+ii.    A human can have a gender property of a male, female or non-binary.
+iii.    A human can be the father of another human.
+iv.    A human can be the mother of another human.
+v.    A human can be married to another human.
+vi.    A human can have a Birth Year property of type “xs:Year”.
+vii.    If a human is married to another, then they like each other.
+viii.    If a human is a mother of father, the human is a parent.

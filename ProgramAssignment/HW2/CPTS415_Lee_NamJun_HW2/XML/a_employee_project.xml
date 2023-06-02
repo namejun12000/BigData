@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employeeProjects SYSTEM "b_employee_project.dtd">
+<employeeProjects>
+    <!--employeeProject-->
+    <employeeProject>
+        <proj_num>15</proj_num>
+        <emp_num>103</emp_num>
+        <job_class>Electrical Engineer</job_class>
+        <chg_hour>84.50</chg_hour>
+        <hours>23.8</hours>
+    </employeeProject>
+
+    <employeeProject>
+        <proj_num>15</proj_num>
+        <emp_num>101</emp_num>
+        <job_class>Database Designer</job_class>
+        <chg_hour>105.00</chg_hour>
+        <hours>19.4</hours>
+    </employeeProject>
+    
+    <employeeProject>
+        <proj_num>15</proj_num>
+        <emp_num>105</emp_num>
+        <job_class>Database Designer</job_class>
+        <chg_hour>105.00</chg_hour>
+        <hours>35.7</hours>
+    </employeeProject>
+    
+    <employeeProject>
+        <proj_num>15</proj_num>
+        <emp_num>106</emp_num>
+        <job_class>Programmer</job_class>
+        <chg_hour>35.75</chg_hour>
+        <hours>12.6</hours>
+    </employeeProject>
+    
+    <employeeProject>
+        <proj_num>15</proj_num>
+        <emp_num>102</emp_num>
+        <job_class>Systems Analyst</job_class>
+        <chg_hour>96.75</chg_hour>
+        <hours>23.8</hours>
+    </employeeProject>
+    
+    <employeeProject>
+        <proj_num>18</proj_num>
+        <emp_num>114</emp_num>
+        <job_class>Applications Designer</job_class>
+        <chg_hour>48.10</chg_hour>
+        <hours>24.6</hours>
+    </employeeProject>
+    
+    <employeeProject>
+        <proj_num>18</proj_num>
+        <emp_num>118</emp_num>
+        <job_class>General Support</job_class>
+        <chg_hour>18.36</chg_hour>
+        <hours>45.3</hours>
+    </employeeProject>
+
+    <employeeProject>
+        <proj_num>18</proj_num>
+        <emp_num>104</emp_num>
+        <job_class>Systems Analyst</job_class>
+        <chg_hour>96.75</chg_hour>
+        <hours>32.4</hours>
+    </employeeProject>
+    
+    <employeeProject>
+        <proj_num>18</proj_num>
+        <emp_num>112</emp_num>
+        <job_class>DSS Analyst</job_class>
+        <chg_hour>45.95</chg_hour>
+        <hours>44.0</hours>
+    </employeeProject>
+</employeeProjects>

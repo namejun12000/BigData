@@ -1,0 +1,15 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://wsu.edu/cpts415/schemas/a_employee_project.json",
+    "type": "object",
+    "properties":
+    {
+        "PROJ_NUM": {"type": "string"},
+        "EMP_NUM": {"type": "string"},
+        "JOB_CLASS": {"type": "string"},
+        "CHG_HOUR": {"type": "number"},
+        "HOURS": {"type": "number"}
+    },
+    "required": ["PROJ_NUM","EMP_NUM"]
+}
+

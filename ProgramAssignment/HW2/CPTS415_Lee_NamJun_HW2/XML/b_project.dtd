@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE projects[
+    <!ELEMENT projects(project*)>
+    <!ELEMENT project (proj_num, proj_name)>
+    <!ELEMENT proj_num (#PCDATA)>
+    <!ELEMENT proj_num (#PCDATA)>
+    <!ATTLIST project proj_num ID #required>
+]>

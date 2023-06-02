@@ -1,0 +1,11 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://wsu.edu/cpts415/schemas/a_project.json",
+    "type": "object",
+    "properties":
+    {
+        "PROJ_NUM": {"type": "string"},
+        "PROJ_NAME": {"type": "string"}
+    },
+    "required": ["PROJ_NUM"]
+}

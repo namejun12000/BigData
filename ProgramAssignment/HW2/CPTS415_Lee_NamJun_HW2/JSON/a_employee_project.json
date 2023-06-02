@@ -1,0 +1,65 @@
+[
+{
+    "PROJ_NUM": 15,
+    "EMP_NUM": 103,
+    "JOB_CLASS": "Electrical Engineer",
+    "CHG_HOUR": 84.50,
+    "HOURS": 23.8
+},
+{
+    "PROJ_NUM": 15,
+    "EMP_NUM": 101,
+    "JOB_CLASS": "Database Designer",
+    "CHG_HOUR": 105.00,
+    "HOURS": 19.4
+},
+{
+    "PROJ_NUM": 15,
+    "EMP_NUM": 105,
+    "JOB_CLASS": "Database Designer",
+    "CHG_HOUR": 105.00,
+    "HOURS": 35.7
+},
+{
+    "PROJ_NUM": 15,
+    "EMP_NUM": 106,
+    "JOB_CLASS": "Programmer",
+    "CHG_HOUR": 35.75,
+    "HOURS": 12.6
+},
+{
+    "PROJ_NUM": 15,
+    "EMP_NUM": 102,
+    "JOB_CLASS": "Systems Analyst",
+    "CHG_HOUR": 96.75,
+    "HOURS": 23.8
+},
+{
+    "PROJ_NUM": 18,
+    "EMP_NUM": 114,
+    "JOB_CLASS": "Applications Designer",
+    "CHG_HOUR": 48.10,
+    "HOURS": 24.6
+},
+{
+    "PROJ_NUM": 18,
+    "EMP_NUM": 118,
+    "JOB_CLASS": "General Support",
+    "CHG_HOUR": 18.36,
+    "HOURS": 45.3
+},
+{
+    "PROJ_NUM": 18,
+    "EMP_NUM": 104,
+    "JOB_CLASS": "Systems Analyst",
+    "CHG_HOUR": 96.75,
+    "HOURS": 32.4
+},
+{
+    "PROJ_NUM": 18,
+    "EMP_NUM": 112,
+    "JOB_CLASS": "DSS Analyst",
+    "CHG_HOUR": 45.95,
+    "HOURS": 44.0
+}
+]

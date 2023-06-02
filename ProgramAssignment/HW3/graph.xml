@@ -1,0 +1,348 @@
+# JOB
+
+CREATE (JOB_500:Job {JOB_CODE: "500", JOB_CLASS: "Programmer", CHR_HOUR: 35.75})
+CREATE (JOB_501:Job {JOB_CODE: "501", JOB_CLASS: "Systems Analyst", CHR_HOUR: 96.75})
+CREATE (JOB_502:Job {JOB_CODE: "502", JOB_CLASS: "Database Designer", CHR_HOUR: 105.00})
+CREATE (JOB_503:Job {JOB_CODE: "503", JOB_CLASS: "Electrical Engineer", CHR_HOUR: 84.50})
+CREATE (JOB_506:Job {JOB_CODE: "506", JOB_CLASS: "Clerical Support", CHR_HOUR: 26.87})
+CREATE (JOB_507:Job {JOB_CODE: "507", JOB_CLASS: "DSS Analyst", CHR_HOUR: 45.95})
+CREATE (JOB_508:Job {JOB_CODE: "508", JOB_CLASS: "Applications Designer", CHR_HOUR: 48.10})
+CREATE (JOB_509:Job {JOB_CODE: "509", JOB_CLASS: "Bio Technician", CHR_HOUR: 34.55})
+CREATE (JOB_510:Job {JOB_CODE: "510", JOB_CLASS: "General Support", CHR_HOUR: 18.36})
+
+CREATE CONSTRAINT Job_ID_Constraint ON (j:Job)
+ASSERT j.JOB_CODE IS UNIQUE;
+
+# PROJECT
+CREATE (PROJECT_15:Project {PROJ_NUM: "15", PROJ_NAME: "Evergreen"})
+CREATE (PROJECT_18:Project {PROJ_NUM: "18", PROJ_NAME: "Amber Wave"})
+CREATE (PROJECT_22:Project {PROJ_NUM: "22", PROJ_NAME: "Rolling Tide"})
+CREATE (PROJECT_25:Project {PROJ_NUM: "25", PROJ_NAME: "Starflight"})
+
+CREATE CONSTRAINT Project_ID_Constraint ON (p:Project)
+ASSERT p.PROJ_NUM IS UNIQUE;
+
+# EMPLOYEE
+CREATE (EMPLOYEE_101: Employee {EMP_NUM: "101", EMP_NAME:"John G. News", EMP_HIREDATE:"11/08/1998"})
+CREATE (EMPLOYEE_102: Employee {EMP_NUM: "102", EMP_NAME:"David H. Senior", EMP_HIREDATE:"07/12/1987"})
+CREATE (EMPLOYEE_103: Employee {EMP_NUM: "103", EMP_NAME:"June E. Arbough", EMP_HIREDATE:"12/01/1994"})
+CREATE (EMPLOYEE_104: Employee {EMP_NUM: "104", EMP_NAME:"Anne K. Ramoras", EMP_HIREDATE:"11/15/1985"})
+CREATE (EMPLOYEE_105: Employee {EMP_NUM: "105", EMP_NAME:"Alice K. Johnson", EMP_HIREDATE:"02/01/1991"})
+CREATE (EMPLOYEE_106: Employee {EMP_NUM: "106", EMP_NAME:"William Smithfield", EMP_HIREDATE:"06/22/2003"})
+CREATE (EMPLOYEE_107: Employee {EMP_NUM: "107", EMP_NAME:"Maria D. Alonzo", EMP_HIREDATE:"10/10/1991"})
+CREATE (EMPLOYEE_108: Employee {EMP_NUM: "108", EMP_NAME:"Ralph B. Washington", EMP_HIREDATE:"08/22/1989"})
+CREATE (EMPLOYEE_111: Employee {EMP_NUM: "111", EMP_NAME:"Geoff B. Wabash", EMP_HIREDATE:"04/04/1989"})
+CREATE (EMPLOYEE_112: Employee {EMP_NUM: "112", EMP_NAME:"Darlene M. Smithson", EMP_HIREDATE:"10/23/1992"})
+CREATE (EMPLOYEE_114: Employee {EMP_NUM: "114", EMP_NAME:"Annelise Jones", EMP_HIREDATE:"08/20/1991"})
+CREATE (EMPLOYEE_115: Employee {EMP_NUM: "115", EMP_NAME:"Travis B. Bawangi", EMP_HIREDATE:"01/25/1990"})
+CREATE (EMPLOYEE_118: Employee {EMP_NUM: "118", EMP_NAME:"James J. Frommer",EMP_HIREDATE:"01/04/2004"})
+CREATE (EMPLOYEE_113: Employee {EMP_NUM: "113", EMP_NAME:"Delbert K. Joenbrood",EMP_HIREDATE:"11/15/1994"})
+CREATE CONSTRAINT Employee_ID_Constraint ON (e:Employee)
+ASSERT e.EMP_NUM IS UNIQUE;
+
+# ASSIGN
+CREATE (ASSIGN_001: Assign {PROJ_NUM: "15",EMP_NUM: "103", ASSIGN_HOURS: 23.8})
+CREATE (ASSIGN_002: Assign {PROJ_NUM: "15",EMP_NUM: "101",ASSIGN_HOURS: 19.4})
+CREATE (ASSIGN_003: Assign {PROJ_NUM: "15",EMP_NUM: "105",ASSIGN_HOURS: 35.7})
+CREATE (ASSIGN_004: Assign {PROJ_NUM: "15",EMP_NUM: "106",ASSIGN_HOURS: 12.6})
+CREATE (ASSIGN_005: Assign {PROJ_NUM: "15",EMP_NUM: "102",ASSIGN_HOURS: 23.8})
+CREATE (ASSIGN_006: Assign {PROJ_NUM: "18",EMP_NUM: "114",ASSIGN_HOURS: 24.6})
+CREATE (ASSIGN_007: Assign {PROJ_NUM: "18",EMP_NUM: "118",ASSIGN_HOURS: 45.3})
+CREATE (ASSIGN_008: Assign {PROJ_NUM: "18",EMP_NUM: "104",ASSIGN_HOURS: 32.4})
+CREATE (ASSIGN_009: Assign {PROJ_NUM: "18",EMP_NUM: "112",ASSIGN_HOURS: 44.0})
+CREATE (ASSIGN_010: Assign {PROJ_NUM: "22",EMP_NUM: "105",ASSIGN_HOURS: 64.7})
+CREATE (ASSIGN_011: Assign {PROJ_NUM: "22",EMP_NUM: "104",ASSIGN_HOURS: 48.4})
+CREATE (ASSIGN_012: Assign {PROJ_NUM: "22",EMP_NUM: "113",ASSIGN_HOURS: 23.6})
+CREATE (ASSIGN_013: Assign {PROJ_NUM: "22",EMP_NUM: "111",ASSIGN_HOURS: 22.0})
+CREATE (ASSIGN_014: Assign {PROJ_NUM: "22",EMP_NUM: "106",ASSIGN_HOURS: 12.8})
+CREATE (ASSIGN_015: Assign {PROJ_NUM: "25",EMP_NUM: "107",ASSIGN_HOURS: 24.6})
+CREATE (ASSIGN_016: Assign {PROJ_NUM: "25",EMP_NUM: "115",ASSIGN_HOURS: 45.8})
+CREATE (ASSIGN_017: Assign {PROJ_NUM: "25",EMP_NUM: "101",ASSIGN_HOURS: 56.3})
+CREATE (ASSIGN_018: Assign {PROJ_NUM: "25",EMP_NUM: "114",ASSIGN_HOURS: 33.1})
+CREATE (ASSIGN_019: Assign {PROJ_NUM: "25",EMP_NUM: "108",ASSIGN_HOURS: 23.6})
+CREATE (ASSIGN_020: Assign {PROJ_NUM: "25",EMP_NUM: "118",ASSIGN_HOURS: 30.5})
+CREATE (ASSIGN_021: Assign {PROJ_NUM: "25",EMP_NUM: "112",ASSIGN_HOURS: 41.4})
+
+# match person project
+
+MATCH (job500:Job {JOB_CLASS: 'Programmer'})
+MATCH (e106:Employee {EMP_NAME: 'William Smithfield'})
+CREATE (e106)-[rel:Job_Is]->(job500)
+
+MATCH (job500:Job {JOB_CLASS: 'Programmer'})
+MATCH (e107:Employee {EMP_NAME: 'Maria D. Alonzo'})
+CREATE (e107)-[rel:Job_Is]->(job500)
+
+
+MATCH (job501:Job {JOB_CLASS: 'Systems Analyst'})
+MATCH (e102:Employee {EMP_NAME: 'David H. Senior'})
+CREATE (e102)-[rel:Job_Is]->(job501)
+
+MATCH (job501:Job {JOB_CLASS: 'Systems Analyst'})
+MATCH (e104:Employee {EMP_NAME: 'Anne K. Ramoras'})
+CREATE (e104)-[rel:Job_Is]->(job501)
+
+MATCH (job501:Job {JOB_CLASS: 'Systems Analyst'})
+MATCH (e108:Employee {EMP_NAME: 'Ralph B. Washington'})
+CREATE (e108)-[rel:Job_Is]->(job501)
+
+MATCH (job501:Job {JOB_CLASS: 'Systems Analyst'})
+MATCH (e115:Employee {EMP_NAME: 'Travis B. Bawangi'})
+CREATE (e115)-[rel:Job_Is]->(job501)
+
+MATCH (job502:Job {JOB_CLASS: 'Database Designer'})
+MATCH (e101:Employee {EMP_NAME: 'John G. News'})
+CREATE (e101)-[rel:Job_Is]->(job502)
+
+MATCH (job502:Job {JOB_CLASS: 'Database Designer'})
+MATCH (e105:Employee {EMP_NAME: 'Alice K. Johnson'})
+CREATE (e105)-[rel:Job_Is]->(job502)
+
+
+MATCH (job503:Job {JOB_CLASS: 'Electrical Engineer'})
+MATCH (e103:Employee {EMP_NAME: 'June E. Arbough'})
+CREATE (e103)-[rel:Job_Is]->(job503)
+
+
+MATCH (job506:Job {JOB_CLASS: 'Clerical Support'})
+MATCH (e111:Employee {EMP_NAME: 'Geoff B. Wabash'})
+CREATE (e111)-[rel:Job_Is]->(job506)
+
+
+MATCH (job507:Job {JOB_CLASS: 'DSS Analyst'})
+MATCH (e112:Employee {EMP_NAME: 'Darlene M. Smithson'})
+CREATE (e112)-[rel:Job_Is]->(job507)
+
+
+
+MATCH (job508:Job {JOB_CLASS: 'Applications Designer'})
+MATCH (e114:Employee {EMP_NAME: 'Annelise Jones'})
+CREATE (e114)-[rel:Job_Is]->(job508)
+
+
+MATCH (job508:Job {JOB_CLASS: 'Applications Designer'})
+MATCH (e113:Employee {EMP_NAME: 'Delbert K. Joenbrood'})
+CREATE (e113)-[rel:Job_Is]->(job508)
+
+MATCH (job510:Job {JOB_CLASS: 'General Support'})
+MATCH (e118:Employee {EMP_NAME: 'James J. Frommer'})
+CREATE (e118)-[rel:Job_Is]->(job510)
+
+
+
+
+# MATCH Assign hour Person
+
+MATCH (e103:Employee {EMP_NAME: 'June E. Arbough'})
+MATCH (a001:Assign {PROJ_NUM: '15', EMP_NUM: '103', ASSIGN_HOURS: 23.8})
+CREATE (e103)-[rel:Worked_For]->(a001)
+
+MATCH (e101:Employee {EMP_NAME: 'John G. News'})
+MATCH (a002:Assign {PROJ_NUM: '15', EMP_NUM: '101', ASSIGN_HOURS: 19.4})
+CREATE (e101)-[rel:Worked_For]->(a002)
+
+MATCH (e105:Employee {EMP_NAME: 'Alice K. Johnson'})
+MATCH (a003:Assign {PROJ_NUM: '15', EMP_NUM: '105', ASSIGN_HOURS: 35.7})
+CREATE (e105)-[rel:Worked_For]->(a003)
+
+MATCH (e106:Employee {EMP_NAME: 'William Smithfield'})
+MATCH (a004:Assign {PROJ_NUM: '15', EMP_NUM: '106', ASSIGN_HOURS: 12.6})
+CREATE (e106)-[rel:Worked_For]->(a004)
+
+MATCH (e102:Employee {EMP_NAME: 'David H. Senior'})
+MATCH (a005:Assign {PROJ_NUM: '15', EMP_NUM: '102', ASSIGN_HOURS: 23.8})
+CREATE (e102)-[rel:Worked_For]->(a005)
+
+MATCH (e114:Employee {EMP_NAME: 'Annelise Jones'})
+MATCH (a006:Assign {PROJ_NUM: '18', EMP_NUM: '114', ASSIGN_HOURS: 24.6})
+CREATE (e114)-[rel:Worked_For]->(a006)
+
+MATCH (e118:Employee {EMP_NAME: 'James J. Frommer'})
+MATCH (a007:Assign {PROJ_NUM: '18', EMP_NUM: '118', ASSIGN_HOURS: 45.3})
+CREATE (e118)-[rel:Worked_For]->(a007)
+
+MATCH (e104:Employee {EMP_NAME: 'Anne K. Ramoras'})
+MATCH (a008:Assign {PROJ_NUM: '18', EMP_NUM: '104', ASSIGN_HOURS: 32.4})
+CREATE (e104)-[rel:Worked_For]->(a008)
+
+MATCH (e112:Employee {EMP_NAME: 'Darlene M. Smithson'})
+MATCH (a009:Assign {PROJ_NUM: '18', EMP_NUM: '112', ASSIGN_HOURS: 44.0})
+CREATE (e112)-[rel:Worked_For]->(a009)
+
+MATCH (e105:Employee {EMP_NAME: 'Alice K. Johnson'})
+MATCH (a010:Assign {PROJ_NUM: '22', EMP_NUM: '105', ASSIGN_HOURS: 64.7})
+CREATE (e105)-[rel:Worked_For]->(a010)
+
+MATCH (e104:Employee {EMP_NAME: 'Anne K. Ramoras'})
+MATCH (a011:Assign {PROJ_NUM: '22', EMP_NUM: '104', ASSIGN_HOURS: 48.4})
+CREATE (e104)-[rel:Worked_For]->(a011)
+
+MATCH (e113:Employee {EMP_NAME: 'Delbert K. Joenbrood'})
+MATCH (a012:Assign {PROJ_NUM: '22', EMP_NUM: '113', ASSIGN_HOURS: 23.6})
+CREATE (e113)-[rel:Worked_For]->(a012)
+
+MATCH (e111:Employee {EMP_NAME: 'Geoff B. Wabash'})
+MATCH (a013:Assign {PROJ_NUM: '22', EMP_NUM: '111', ASSIGN_HOURS: 22.0})
+CREATE (e111)-[rel:Worked_For]->(a013)
+
+MATCH (e106:Employee {EMP_NAME: 'William Smithfield'})
+MATCH (a014:Assign {PROJ_NUM: '22', EMP_NUM: '106', ASSIGN_HOURS: 12.8})
+CREATE (e106)-[rel:Worked_For]->(a014)
+
+MATCH (e107:Employee {EMP_NAME: 'Maria D. Alonzo'})
+MATCH (a015:Assign {PROJ_NUM: '25', EMP_NUM: '107', ASSIGN_HOURS: 24.6})
+CREATE (e107)-[rel:Worked_For]->(a015)
+
+MATCH (e115:Employee {EMP_NAME: 'Travis B. Bawangi'})
+MATCH (a016:Assign {PROJ_NUM: '25', EMP_NUM: '115', ASSIGN_HOURS: 45.8})
+CREATE (e115)-[rel:Worked_For]->(a016)
+
+MATCH (e101:Employee {EMP_NAME: 'John G. News'})
+MATCH (a017:Assign {PROJ_NUM: '25', EMP_NUM: '101', ASSIGN_HOURS: 56.3})
+CREATE (e101)-[rel:Worked_For]->(a017)
+
+MATCH (e114:Employee {EMP_NAME: 'Annelise Jones'})
+MATCH (a018:Assign {PROJ_NUM: '25', EMP_NUM: '114', ASSIGN_HOURS: 33.1})
+CREATE (e114)-[rel:Worked_For]->(a018)
+
+MATCH (e108:Employee {EMP_NAME: 'Ralph B. Washington'})
+MATCH (a019:Assign {PROJ_NUM: '25', EMP_NUM: '108', ASSIGN_HOURS: 23.6})
+CREATE (e108)-[rel:Worked_For]->(a019)
+
+MATCH (e118:Employee {EMP_NAME: 'James J. Frommer'})
+MATCH (a020:Assign {PROJ_NUM: '25', EMP_NUM: '118', ASSIGN_HOURS: 30.5})
+CREATE (e118)-[rel:Worked_For]->(a020)
+
+MATCH (e112:Employee {EMP_NAME: 'Darlene M. Smithson'})
+MATCH (a021:Assign {PROJ_NUM: '25', EMP_NUM: '112', ASSIGN_HOURS: 41.4})
+CREATE (e112)-[rel:Participated_In]->(a021)
+
+# Match Assign Project
+
+MATCH (p015:Project {PROJ_NAME: 'Evergreen'})
+MATCH (a001:Assign {PROJ_NUM: '15', EMP_NUM: '103', ASSIGN_HOURS: 23.8})
+CREATE (a001)-[rel:Participated_In]->(p015)
+
+MATCH (p015:Project {PROJ_NAME: 'Evergreen'})
+MATCH (a002:Assign {PROJ_NUM: '15', EMP_NUM: '101', ASSIGN_HOURS: 19.4})
+CREATE (a002)-[rel:Participated_In]->(p015)
+
+MATCH (p015:Project {PROJ_NAME: 'Evergreen'})
+MATCH (a003:Assign {PROJ_NUM: '15', EMP_NUM: '105', ASSIGN_HOURS: 35.7})
+CREATE (a003)-[rel:Participated_In]->(p015)
+
+MATCH (p015:Project {PROJ_NAME: 'Evergreen'})
+MATCH (a004:Assign {PROJ_NUM: '15', EMP_NUM: '106', ASSIGN_HOURS: 12.6})
+CREATE (a004)-[rel:Participated_In]->(p015)
+
+MATCH (p015:Project {PROJ_NAME: 'Evergreen'})
+MATCH (a005:Assign {PROJ_NUM: '15', EMP_NUM: '102', ASSIGN_HOURS: 23.8})
+CREATE (a005)-[rel:Participated_In]->(p015)
+
+MATCH (p018:Project {PROJ_NAME: 'Amber Wave'})
+MATCH (a006:Assign {PROJ_NUM: '18', EMP_NUM: '114', ASSIGN_HOURS: 24.6})
+CREATE (a006)-[rel:Participated_In]->(p018)
+
+MATCH (p018:Project {PROJ_NAME: 'Amber Wave'})
+MATCH (a007:Assign {PROJ_NUM: '18', EMP_NUM: '118', ASSIGN_HOURS: 45.3})
+CREATE (a007)-[rel:Participated_In]->(p018)
+
+MATCH (p018:Project {PROJ_NAME: 'Amber Wave'})
+MATCH (a008:Assign {PROJ_NUM: '18', EMP_NUM: '104', ASSIGN_HOURS: 32.4})
+CREATE (a008)-[rel:Participated_In]->(p018)
+
+MATCH (p018:Project {PROJ_NAME: 'Amber Wave'})
+MATCH (a009:Assign {PROJ_NUM: '18', EMP_NUM: '112', ASSIGN_HOURS: 44.0})
+CREATE (a009)-[rel:Participated_In]->(p018)
+
+MATCH (p022:Project {PROJ_NAME: 'Rolling Tide'})
+MATCH (a010:Assign {PROJ_NUM: '22', EMP_NUM: '105', ASSIGN_HOURS: 64.7})
+CREATE (a010)-[rel:Participated_In]->(p022)
+
+MATCH (p022:Project {PROJ_NAME: 'Rolling Tide'})
+MATCH (a011:Assign {PROJ_NUM: '22', EMP_NUM: '104', ASSIGN_HOURS: 48.4})
+CREATE (a011)-[rel:Participated_In]->(p022)
+
+MATCH (p022:Project {PROJ_NAME: 'Rolling Tide'})
+MATCH (a012:Assign {PROJ_NUM: '22', EMP_NUM: '113', ASSIGN_HOURS: 23.6})
+CREATE (a012)-[rel:Participated_In]->(p022)
+
+MATCH (p022:Project {PROJ_NAME: 'Rolling Tide'})
+MATCH (a013:Assign {PROJ_NUM: '22', EMP_NUM: '111', ASSIGN_HOURS: 22.0})
+CREATE (a013)-[rel:Participated_In]->(p022)
+
+MATCH (p022:Project {PROJ_NAME: 'Rolling Tide'})
+MATCH (a014:Assign {PROJ_NUM: '22', EMP_NUM: '106', ASSIGN_HOURS: 12.8})
+CREATE (a014)-[rel:Participated_In]->(p022)
+
+MATCH (p025:Project {PROJ_NAME: 'Starflight'})
+MATCH (a015:Assign {PROJ_NUM: '25', EMP_NUM: '107', ASSIGN_HOURS: 24.6})
+CREATE (a015)-[rel:Participated_In]->(p025)
+
+MATCH (p025:Project {PROJ_NAME: 'Starflight'})
+MATCH (a016:Assign {PROJ_NUM: '25', EMP_NUM: '115', ASSIGN_HOURS: 45.8})
+CREATE (a016)-[rel:Participated_In]->(p025)
+
+MATCH (p025:Project {PROJ_NAME: 'Starflight'})
+MATCH (a017:Assign {PROJ_NUM: '25', EMP_NUM: '101', ASSIGN_HOURS: 56.3})
+CREATE (a017)-[rel:Participated_In]->(p025)
+
+MATCH (p025:Project {PROJ_NAME: 'Starflight'})
+MATCH (a018:Assign {PROJ_NUM: '25', EMP_NUM: '114', ASSIGN_HOURS: 33.1})
+CREATE (a018)-[rel:Participated_In]->(p025)
+
+MATCH (p025:Project {PROJ_NAME: 'Starflight'})
+MATCH (a019:Assign {PROJ_NUM: '25', EMP_NUM: '108', ASSIGN_HOURS: 23.6})
+CREATE (a019)-[rel:Participated_In]->(p025)
+
+MATCH (p025:Project {PROJ_NAME: 'Starflight'})
+MATCH (a020:Assign {PROJ_NUM: '25', EMP_NUM: '118', ASSIGN_HOURS: 30.5})
+CREATE (a020)-[rel:Participated_In]->(p025)
+
+MATCH (p025:Project {PROJ_NAME: 'Starflight'})
+MATCH (a021:Assign {PROJ_NUM: '25', EMP_NUM: '112', ASSIGN_HOURS: 41.4})
+CREATE (a021)-[rel:Participated_In]->(p025)
+
+
+
+MATCH (p015:Project {PROJ_NAME: 'Evergreen'})
+MATCH (p018:Project {PROJ_NAME: 'Amber Wave'})
+MATCH (p022:Project {PROJ_NAME: 'Rolling Tide'})
+MATCH (p025:Project {PROJ_NAME: 'Starflight'})
+
+MATCH (e101:Employee {EMP_NAME: 'John G. News'})
+MATCH (e102:Employee {EMP_NAME: 'David H. Senior'})
+MATCH (e103:Employee {EMP_NAME: 'June E. Arbough'})
+MATCH (e104:Employee {EMP_NAME: 'Anne K. Ramoras'})
+MATCH (e105:Employee {EMP_NAME: 'Alice K. Johnson'})
+MATCH (e106:Employee {EMP_NAME: 'William Smithfield'})
+MATCH (e107:Employee {EMP_NAME: 'Maria D. Alonzo'})
+MATCH (e108:Employee {EMP_NAME: 'Ralph B. Washington'})
+MATCH (e111:Employee {EMP_NAME: 'Geoff B. Wabash'})
+MATCH (e112:Employee {EMP_NAME: 'Darlene M. Smithson'})
+MATCH (e113:Employee {EMP_NAME: 'Delbert K. Joenbrood'})
+MATCH (e114:Employee {EMP_NAME: 'Annelise Jones'})
+MATCH (e115:Employee {EMP_NAME: 'Travis B. Bawangi'})
+MATCH (e118:Employee {EMP_NAME: 'James J. Frommer'})
+
+<!---->
+<!---->
+LOAD CSV WITH HEADERS FROM 'file:///Project-PROJECT.csv' AS row
+CREATE (n:Project)
+set n = row
+<!---->
+<!--LOAD CSV WITH HEADERS FROM 'file:///Assign-ASSIGN.csv' AS row-->
+<!--CREATE (n:Assign)-->
+<!--set n = row-->
+<!---->
+<!--LOAD CSV WITH HEADERS FROM 'file:///Employee-EMPLOYEE.csv' AS row-->
+<!--CREATE (n:Employee)-->
+<!--set n = row-->
+<!---->
+<!--LOAD CSV WITH HEADERS FROM 'file:///Job-JOB.csv' AS row-->
+<!--CREATE (n:Job)-->
+<!--set n = row-->
+<!---->
+<!--LOAD CSV WITH HEADERS FROM 'file:///Employee_Project-EMPLOYEE_PROJECT.csv' AS row-->
+<!--CREATE (n:EmployeeProject)-->
+<!--set n = row-->

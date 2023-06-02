@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees[
+    <!ELEMENT employees(employee*)>
+    <!ELEMENT employee (emp_num, name+, emp_initial, emp_hiredate)>
+    <!ELEMENT emp_num (#PCDATA)>
+    <!ELEMENT name (emp_lname, emp_fname)
+    <!ELEMENT emp_initial (#PCDATA)>
+    <!ELEMENT emp_hiredate (#PCDATA)>
+    <!ELEMENT emp_lname (#PCDATA)>
+    <!ELEMENT emp_fname (#PCDATA)>
+    <!ATTLIST employee emp_num ID #required>
+    <!ATTLIST employee emp_initial EMPTY #IMPLIED>
+]>
